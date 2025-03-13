@@ -168,7 +168,7 @@ const SkillsSection = ({
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                               <div
-                                className={`p-1.5 rounded-md text-white ${skill.color}`}
+                                className={`p-1.5 rounded-md text-white shadow-sm ${skill.color}`}
                               >
                                 {skill.icon}
                               </div>
@@ -178,7 +178,7 @@ const SkillsSection = ({
                             </div>
                             <Badge
                               variant="secondary"
-                              className="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                              className="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 shadow-sm"
                             >
                               {skill.proficiency}%
                             </Badge>
@@ -195,7 +195,7 @@ const SkillsSection = ({
 
                     <Progress
                       value={skill.proficiency}
-                      className="h-1.5"
+                      className="h-1.5 dark:bg-gray-700"
                       style={{
                         backgroundColor: "rgba(229, 231, 235, 0.5)",
                       }}

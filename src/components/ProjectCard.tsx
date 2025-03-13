@@ -64,7 +64,10 @@ const ProjectCard = ({
               <Badge
                 key={index}
                 variant="secondary"
-                className={tech.color || "bg-gray-100 text-gray-800"}
+                className={
+                  tech.color ||
+                  "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+                }
               >
                 {tech.name}
               </Badge>
@@ -76,7 +79,7 @@ const ProjectCard = ({
           <Button
             variant="outline"
             size="sm"
-            className="text-xs bg-purple-600 hover:bg-purple-700 shadow-md hover:shadow-purple-300/50 transition-all"
+            className="text-xs bg-purple-600 hover:bg-purple-700 text-white dark:bg-purple-700 dark:hover:bg-purple-800 shadow-md hover:shadow-purple-300/50 dark:hover:shadow-purple-900/50 transition-all"
             onClick={onClick}
           >
             <Eye className="h-3.5 w-3.5 mr-1" />
@@ -84,7 +87,12 @@ const ProjectCard = ({
           </Button>
           <div className="flex gap-2">
             {demoUrl && (
-              <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-gray-700 hover:text-purple-700 dark:text-gray-300 dark:hover:text-purple-400"
+                asChild
+              >
                 <a
                   href={demoUrl}
                   target="_blank"
@@ -96,7 +104,12 @@ const ProjectCard = ({
               </Button>
             )}
             {repoUrl && (
-              <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 text-gray-700 hover:text-purple-700 dark:text-gray-300 dark:hover:text-purple-400"
+                asChild
+              >
                 <a
                   href={repoUrl}
                   target="_blank"

@@ -51,7 +51,7 @@ const Sidebar = ({ resumeUrl = "/resume.pdf" }: SidebarProps) => {
           animate={{ width: isCollapsed ? 60 : 200 }}
           exit={{ width: 60 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="bg-white dark:bg-gray-900 rounded-r-xl shadow-lg overflow-hidden flex flex-col h-auto py-4"
+          className="bg-white dark:bg-gray-900 rounded-r-xl shadow-lg dark:shadow-purple-900/20 overflow-hidden flex flex-col h-auto py-4 border-r border-t border-b border-gray-100 dark:border-gray-800"
         >
           <div className="flex justify-end px-2 mb-6">
             <Button

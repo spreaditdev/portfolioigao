@@ -99,7 +99,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
 
   return (
     <motion.div
-      className={className}
+      className={`${className} dark:text-white`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once }}

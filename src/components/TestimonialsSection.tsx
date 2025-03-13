@@ -111,7 +111,7 @@ const TestimonialsSection = ({
                         "{testimonial.content}"
                       </p>
                       <div className="flex items-center mt-4">
-                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <div className="w-12 h-12 rounded-full overflow-hidden mr-4 bg-gray-100 dark:bg-gray-700">
                           <img
                             src={testimonial.avatar}
                             alt={testimonial.name}

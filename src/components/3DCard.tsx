@@ -65,7 +65,7 @@ const ThreeDCard: React.FC<ThreeDCardProps> = ({
   return (
     <motion.div
       ref={cardRef}
-      className={`relative overflow-hidden ${className} ${border ? "border border-purple-200/50 dark:border-purple-800/30" : ""} ${shadow ? "shadow-xl" : ""}`}
+      className={`relative overflow-hidden ${className} ${border ? "border border-purple-200/50 dark:border-purple-800/30" : ""} ${shadow ? "shadow-xl dark:shadow-purple-900/20" : ""}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -86,7 +86,10 @@ const ThreeDCard: React.FC<ThreeDCardProps> = ({
         <div
           className="absolute inset-0 w-full h-full pointer-events-none opacity-40 mix-blend-overlay"
           style={{
-            background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255, 255, 255, 0.8) 0%, transparent 50%)`,
+            background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, ${document.documentElement.classList.contains("dark") ? "rgba(255, 255, 255, 0.4)" : "rgba(255, 255, 255, 0.8)"} 0%, transparent 50%)`,
+            mixBlendMode: document.documentElement.classList.contains("dark")
+              ? "soft-light"
+              : "overlay",
           }}
         />
       )}

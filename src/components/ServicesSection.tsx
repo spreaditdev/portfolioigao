@@ -141,7 +141,7 @@ const ServicesSection = ({
             >
               <Card className="h-full flex flex-col bg-white dark:bg-gray-800 hover:shadow-xl hover:shadow-purple-200/50 dark:hover:shadow-purple-900/50 transition-all duration-300 rounded-xl transform hover:-translate-y-2">
                 <CardHeader className="pb-0">
-                  <div className="w-16 h-16 rounded-lg bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-4">
+                  <div className="w-16 h-16 rounded-lg bg-purple-100 dark:bg-purple-900/70 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-4 shadow-md dark:shadow-purple-900/30">
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-bold dark:text-white">
@@ -155,7 +155,7 @@ const ServicesSection = ({
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <div className="mr-2 mt-1 bg-purple-100 dark:bg-purple-900 rounded-full p-0.5">
+                        <div className="mr-2 mt-1 bg-purple-100 dark:bg-purple-900/70 rounded-full p-0.5 shadow-sm">
                           <svg
                             className="h-3 w-3 text-purple-600 dark:text-purple-400"
                             fill="none"

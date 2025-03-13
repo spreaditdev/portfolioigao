@@ -104,7 +104,10 @@ const BlogSection = ({
                   />
                   <div className="absolute top-0 left-0 w-full p-4 flex flex-wrap gap-2">
                     {post.categories.map((category, idx) => (
-                      <Badge key={idx} className="bg-purple-600 text-white">
+                      <Badge
+                        key={idx}
+                        className="bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-800 text-white"
+                      >
                         {category}
                       </Badge>
                     ))}

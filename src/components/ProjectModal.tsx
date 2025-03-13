@@ -62,11 +62,11 @@ const ProjectModal = ({
         alt: "Dashboard overview",
       },
       {
-        src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
         alt: "Analytics page",
       },
       {
-        src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1586282391129-76a6df230234?w=800&q=80",
         alt: "Order management",
       },
     ],
@@ -100,7 +100,7 @@ const ProjectModal = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="bg-white dark:bg-gray-800 max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl shadow-2xl">
+      <DialogContent className="bg-white dark:bg-gray-800 max-w-4xl max-h-[90vh] overflow-y-auto rounded-xl shadow-2xl dark:shadow-purple-900/30">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold dark:text-white">
             {project.title}
@@ -111,7 +111,7 @@ const ProjectModal = ({
         </DialogHeader>
 
         {/* Project Images Carousel */}
-        <div className="relative mt-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700 aspect-video shadow-lg">
+        <div className="relative mt-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700 aspect-video shadow-lg dark:shadow-gray-900/50">
           <img
             src={project.images[currentImageIndex].src}
             alt={project.images[currentImageIndex].alt}
@@ -123,7 +123,7 @@ const ProjectModal = ({
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full bg-white/80 hover:bg-white shadow-lg hover:shadow-xl transition-all"
+              className="rounded-full bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 dark:border-gray-700 shadow-lg hover:shadow-xl dark:text-gray-300 transition-all"
               onClick={prevImage}
             >
               <ArrowLeft className="h-4 w-4" />
@@ -131,7 +131,7 @@ const ProjectModal = ({
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full bg-white/80 hover:bg-white shadow-lg hover:shadow-xl transition-all"
+              className="rounded-full bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 dark:border-gray-700 shadow-lg hover:shadow-xl dark:text-gray-300 transition-all"
               onClick={nextImage}
             >
               <ArrowRight className="h-4 w-4" />
@@ -149,13 +149,16 @@ const ProjectModal = ({
           {/* Technologies */}
           <div>
             <h3 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-400">
-              Tecnologias
+              Technologies
             </h3>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech, index) => (
                 <Badge
                   key={index}
-                  className={tech.color || "bg-purple-100 text-purple-800"}
+                  className={
+                    tech.color ||
+                    "bg-purple-100 text-purple-800 dark:bg-purple-900/70 dark:text-purple-300"
+                  }
                 >
                   {tech.name}
                 </Badge>
@@ -166,7 +169,7 @@ const ProjectModal = ({
           {/* Long Description */}
           <div>
             <h3 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-400">
-              Sobre o Projeto
+              About the Project
             </h3>
             <p className="text-gray-700 dark:text-gray-300">
               {project.longDescription}
@@ -177,7 +180,7 @@ const ProjectModal = ({
           {project.features && project.features.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-400">
-                Principais Recursos
+                Key Features
               </h3>
               <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
                 {project.features.map((feature, index) => (
@@ -191,7 +194,7 @@ const ProjectModal = ({
           {project.challenges && project.challenges.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-2 text-purple-700 dark:text-purple-400">
-                Desafios Técnicos
+                Technical Challenges
               </h3>
               <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
                 {project.challenges.map((challenge, index) => (
@@ -207,19 +210,19 @@ const ProjectModal = ({
             <Button
               variant="outline"
               onClick={() => window.open(project.githubUrl, "_blank")}
-              className="border-purple-600 text-purple-600 hover:bg-purple-50 rounded-xl shadow-lg hover:shadow-purple-300/30 transition-all"
+              className="border-purple-600 text-purple-600 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/50 rounded-xl shadow-lg hover:shadow-purple-300/30 dark:hover:shadow-purple-900/30 transition-all"
             >
               <Github className="mr-2 h-4 w-4" />
-              Ver Código Fonte
+              View Source Code
             </Button>
           )}
           {project.liveUrl && (
             <Button
               onClick={() => window.open(project.liveUrl, "_blank")}
-              className="bg-purple-600 hover:bg-purple-700 rounded-xl shadow-lg hover:shadow-purple-300/50 transition-all"
+              className="bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-800 rounded-xl shadow-lg hover:shadow-purple-300/50 dark:hover:shadow-purple-900/50 transition-all"
             >
               <ExternalLink className="mr-2 h-4 w-4" />
-              Demo ao Vivo
+              Live Demo
             </Button>
           )}
         </DialogFooter>
